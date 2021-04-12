@@ -7,16 +7,16 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
-MUSICIAN_TYPE = (
-    ('Vocalist', 'Vocalist'),
-    ('Instrumentalist', 'Instrumentalist'),
-)
+# MUSICIAN_TYPE = (
+#     ('Vocalist', 'Vocalist'),
+#     ('Instrumentalist', 'Instrumentalist'),
+# )
 
 
 
 class Musicians(models.Model):
     name = models.CharField(max_length=50, verbose_name="Musician Name")
-    musician_type = models.CharField(max_length=20, choices=MUSICIAN_TYPE, verbose_name="Musician Type")
+    musician_type = models.CharField(max_length=20, verbose_name="Musician Type")
 
     def __str__(self):
         return self.name
