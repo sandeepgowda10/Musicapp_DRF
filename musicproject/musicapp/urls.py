@@ -22,7 +22,7 @@ urlpatterns = [
     path('api/api_music_album_update/', MusicAlbumUpdate.as_view(), name='MusicAlbumUpdate'),
     path('api/api_musician_create/', MusiciainCreation.as_view(), name='MusiciainCreation'),
     path('api/api_musician_update/', MusiciainUpdation.as_view(), name='MusiciainUpdation'),
-    path('api/api_album_data/', ALbumDataAPI.as_view(), name='ALbumDataAPI'),
+    path('api/api_album_data/', AlbumDataAPI.as_view(), name='AlbumDataAPI'),
     path('api/api_album_retrieve/', AlbumRetrieveAPI.as_view(), name='AlbumRetrieveAPI'),
     path('api/api_musician_retrieve/', MusicianRetrieveAPI.as_view(), name='MusicianRetrieveAPI'),
 ]

@@ -194,13 +194,13 @@ class MusiciainUpdation(APIView):
 
 #3rd API
 @permission_classes((permissions.AllowAny,))
-class ALbumDataAPI(generics.ListAPIView):
+class AlbumDataAPI(generics.ListAPIView):
     serializer_class = AlbumDataSerializer
     queryset = MusicAlbums.objects.all().order_by('-date_of_release')
     search_fields = ['batch_no']
 
     def get(self, request, *args, **kwargs):
-        response = super(ALbumDataAPI, self).get(request, *args, **kwargs)
+        response = super(AlbumDataAPI, self).get(request, *args, **kwargs)
         return response
 
 
