@@ -65,11 +65,12 @@ class AlbumDataSerializer(serializers.ModelSerializer):
 
 
 class AlbumRetrieveSerializer(serializers.ModelSerializer):
-    musician_id = serializers.IntegerField(required=True)
+    # musician_id = serializers.IntegerField(required=True)
 
     class Meta:
         model=MusicAlbums
         fields='__all__'
+
 
 
 class MusicianRetrieveSerializer(serializers.ModelSerializer):

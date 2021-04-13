@@ -204,24 +204,29 @@ class ALbumDataAPI(generics.ListAPIView):
         return response
 
 
+        
 #4th API
 @permission_classes((permissions.AllowAny,))
-class AlbumRetrieveAPI(APIView):
-    def get(self, request):
-        result = MusicAlbums.objects.filter(sung_by__id=self.request.GET['musician_id']).order_by('price')
-        serializer = AlbumRetrieveSerializer(result, many=True)
-        datas=[]
-        for data in result:
-            result = {
-                'id': data.id,
-                'album_name': data.album_name,
-                'date_of_release': data.date_of_release,
-                'price':data.price,
-                'description':data.description,
-                'genre':data.genre,
-            }
-            datas.append(result)
-        return JsonResponse(datas, safe=False)
+class AlbumRetrieveAPI(generics.ListAPIView):
+    serializer_class = AlbumRetrieveSerializer
+
+    def get_queryset(self):
+        try:
+            records = self.request.query_params['musician_id']
+        except:
+            pass
+        try:
+  
+            queryset = MusicAlbums.objects.filter(sung_by__id=self.request.GET['musician_id']).order_by('price')
+            
+        except:
+            pass
+        return queryset
+
+
+    def get(self, request, *args, **kwargs):
+        response = super(AlbumRetrieveAPI, self).get(request, *args, **kwargs)
+        return response
 
 
 
