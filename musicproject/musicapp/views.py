@@ -225,26 +225,7 @@ class AlbumRetrieveAPI(APIView):
 
 
 
-# @permission_classes((permissions.AllowAny,))
-
-# class MusicianRetrieveAPI(APIView):
-#     def get(self, request):
-#         result = MusicAlbums.objects.filter(id=self.request.GET['album_id'])
-#         # resut_users = result.sung_by.all().order_by('name')
-#         serializer = MusicianRetrieveSerializer(result, many=True)
-#         datas=[]
-#         import ipdb; ipdb.set_trace()
-#         counter = 0
-#         data = [each.sung_by.all().order_by('name') for each in result]
-#         res = {}
-#         for each in data[0]:
-
-#             datas.append(each[counter].name)
-#             counter+=1
-#         res['data'] = datas
-#         return JsonResponse(datas, safe=False)
-
-
+#5th API
 @permission_classes((permissions.AllowAny,))
 class MusicianRetrieveAPI(generics.ListAPIView):
     serializer_class = MusicianRetrieveSerializer
