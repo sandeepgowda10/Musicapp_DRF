@@ -2,8 +2,9 @@
 
 
 1) Clone the repository - git clone https://github.com/sandeepgowda10/Musicapp_DRF.git
-2) migrate the Database
-3)Run the Server 
+2) Install Requirements
+3) migrate the Database
+4)Run the Server 
 
 URL's
 
